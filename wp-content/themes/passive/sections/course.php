@@ -1,7 +1,7 @@
 <div class="section-course p-top-bottom">
   <div class="container">
     <h4 class="section-headline">Kurz</h4>
-    <h3 class="section-subheadline">Nauč sa investovať</h3>
+    <h3 class="section-subheadline">Zarábaj pasívny príjem</h3>
     <div class="course-items">
       <div class="item">
         <div class="icon"><i class="fab fa-ethereum"></i></div>
