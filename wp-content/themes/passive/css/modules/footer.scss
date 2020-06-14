@@ -1,0 +1,39 @@
+.footer {
+  background: darken($black, 3%);
+  padding: 50px 0;
+
+  * {
+    color: $white;
+    font-weight: 300;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .logo-socials {
+    flex: 1;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    a {
+      margin-right: 5px;
+      font-size: 22px;
+      font-weight: 300;
+    }
+  }
+
+  nav {
+    flex: 1;
+
+    ul {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

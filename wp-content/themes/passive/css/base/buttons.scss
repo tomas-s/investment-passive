@@ -1,0 +1,27 @@
+.btn {
+  border-radius: 3px;
+  padding: 10px 15px;
+  transition: all 300ms;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  &-black {
+    background: $black;
+    color: $white;
+
+    &:hover {
+      background: lighten($black, 5%);
+    }
+  }
+
+  &-yellow {
+    background: $yellow;
+    color: $black;
+
+    &:hover {
+      background: lighten($yellow, 10%);
+    }
+  }
+}

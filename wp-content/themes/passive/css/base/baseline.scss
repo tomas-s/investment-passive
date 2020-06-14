@@ -1,0 +1,58 @@
+@mixin atSmall {
+  @media (max-width: 530px) {
+    @content;
+  }
+}
+
+@mixin atSmallMedium {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin atLarge {
+  @media (max-width: 1150px) {
+    @content;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.65em 0;
+}
+
+p,
+li {
+  line-height: 1.65;
+}

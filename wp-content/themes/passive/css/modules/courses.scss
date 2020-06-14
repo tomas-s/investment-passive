@@ -1,0 +1,90 @@
+.courses {
+  background: $black;
+
+  .container {
+    padding: 0;
+  }
+
+  .success-msg {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: $green;
+    padding: 0 10px;
+    background: $white;
+    height: 70px;
+    animation: hideMsg 600ms 8s forwards;
+  }
+
+  &-levels {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+    align-items: flex-end;
+    background: $black;
+    @include atMedium {
+      flex-basis: 100%;
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px;
+      background: transparent;
+      font-weight: 300;
+      cursor: pointer;
+      outline: none;
+      color: $white;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      flex: 1;
+      transition: all 250ms;
+
+      &:first-child {
+        // margin-right: 10px;
+      }
+
+      &:not(.active) span:before {
+        background-color: transparent;
+      }
+
+      &.active {
+        background: lighten($black, 8%);
+      }
+
+      &:hover {
+        background: lighten($black, 8%);
+      }
+
+      span {
+        position: relative;
+        padding-left: 25px;
+        text-transform: uppercase;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0px;
+          left: 5px;
+          width: 5px;
+          height: 100%;
+          transform: skewX(-25deg);
+          transform-origin: 0 100%;
+          background-color: $yellow;
+        }
+      }
+    }
+  }
+}
+
+@keyframes hideMsg {
+  from {
+    height: 70px;
+  }
+
+  to {
+    height: 0;
+  }
+}

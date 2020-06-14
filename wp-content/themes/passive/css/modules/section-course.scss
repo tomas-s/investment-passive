@@ -1,0 +1,42 @@
+.section-course {
+  .course-items {
+    display: flex;
+    justify-content: center;
+
+    .item {
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+      flex-basis: 50%;
+      max-width: 500px;
+      border-radius: 3px;
+      @include atSmallMedium {
+        flex-basis: 80%;
+      }
+
+      .icon {
+        padding: 100px 40px;
+        background-image: linear-gradient(
+          to right top,
+          #0042a5,
+          #383fb0,
+          #5b38b9,
+          #7c2abd,
+          #9c00be
+        );
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          font-size: 140px;
+          color: $white;
+        }
+      }
+
+      .text {
+        padding: 20px 20px 30px 20px;
+      }
+    }
+  }
+}

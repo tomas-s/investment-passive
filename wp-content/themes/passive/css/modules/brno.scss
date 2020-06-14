@@ -1,0 +1,22 @@
+.brno {
+  h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0px;
+      left: 5px;
+      width: 5px;
+      height: 20px;
+      transform: skewX(-25deg);
+      transform-origin: 0 100%;
+      background-color: #ffd500;
+    }
+  }
+}

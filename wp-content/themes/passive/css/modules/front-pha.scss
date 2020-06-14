@@ -1,0 +1,120 @@
+.pha {
+  height: 90vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include atMedium {
+      flex-direction: column;
+    }
+  }
+
+  &-left {
+    margin-right: 40px;
+    background: $yellow;
+    padding: 70px 40px;
+    position: relative;
+    flex: 1;
+    @include atMedium {
+      margin-right: 0;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      background: $yellow;
+      clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+      width: 60%;
+      left: 99%;
+      height: 100%;
+      top: 0;
+      @include atMedium {
+        left: 0;
+        top: 99%;
+        width: 100%;
+        height: 30vw;
+        clip-path: polygon(0 0, 140% 0, 0 100%, 0% 100%);
+      }
+    }
+
+    h2 {
+      font-size: 72px;
+      margin-top: 0;
+      color: $black;
+      font-weight: 700;
+      @include atLarge {
+        font-size: 58px;
+      }
+      @include atMedium {
+        font-size: 48px;
+      }
+      @include atSmallMedium {
+        font-size: 42px;
+      }
+      // @include atSmall {
+      //   font-size: 38px;
+      // }
+
+      span {
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 4px;
+          background: $black;
+          bottom: -10px;
+          left: 1%;
+          animation: animationTopHeadline 2s forwards;
+        }
+      }
+    }
+
+    h4 {
+      font-size: 26px;
+      font-weight: 500;
+      @include atLarge {
+        font-size: 22px;
+      }
+      @include atMedium {
+        font-size: 20px;
+      }
+      @include atSmallMedium {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-right {
+    z-index: 2;
+    flex: 1;
+
+    .video {
+      width: 100%;
+
+      video {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include atMedium {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@keyframes animationTopHeadline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 98%;
+  }
+}
