@@ -82,7 +82,7 @@ if (isset($_POST['btnSubmit'])) {
   <div class="container">
 
     <h4 class="instructions t-center">
-      Na aktiváciu robota, ktorý automaticky nastavuje ťažbu je potrebné zadať nasledujúce informácie.
+      Na aktiváciu robota, ktorý automaticky nastavuje ťažbu, je potrebné zadať nasledujúce informácie.
     </h4>
     <?php
 
