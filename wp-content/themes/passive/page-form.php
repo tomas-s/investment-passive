@@ -1,124 +1,129 @@
 <?php
 
 //response generation function
+get_header();
 
-$response = "";
+global $response;
+global $showText;
 
-//function to generate response
-function my_contact_form_generate_response($type, $message)
-{
 
-  global $response;
-
-  if ($type == "success") $response = "<div class='success'>{$message}</div>";
-  else $response = "<div class='error'>{$message}</div>";
-}
-
-//response messages
-$not_human       = "Human verification incorrect.";
-$missing_content = "Please supply all information.";
-$email_invalid   = "Email Address Invalid.";
-$message_unsent  = "Message was not sent. Try Again.";
-$message_sent    = "Thanks! Your message has been sent.";
+$showText = '';
 
 //user posted variables
-$name = $_POST['message_name'];
+$pass = $_POST['message_password'];
 $email = $_POST['message_email'];
-$message = $_POST['message_text'];
-$human = $_POST['message_human'];
 
-//php mailer variables
-$to = get_option('admin_email');
-$subject = "Someone sent a message from " . get_bloginfo('name');
-$headers = 'From: ' . $email . "\r\n" .
-  'Reply-To: ' . $email . "\r\n";
+$endpoint = 'https://api.kelta.com/Login';
 
-if (!$human == 0) {
-  if ($human != 2) my_contact_form_generate_response("error", $not_human); //not human!
-  else {
+$options = [
+  'method' => 'POST',
+  'timeout'     => 45,
+  'sslverify'   => false,
+  'headers'     => [
+    'Content-Type' => "application/x-www-form-urlencoded",
+  ],
+  'body'  => 'metoda=Login&email=' . $email . '&password=' . $pass,
+];
 
-    //validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-      my_contact_form_generate_response("error", $email_invalid);
-    else //email is valid
-    {
-      //validate presence of name and message
-      if (empty($name) || empty($message)) {
-        my_contact_form_generate_response("error", $missing_content);
-      } else //ready to go!
-      {
-        $sent = wp_mail($to, $subject, strip_tags($message), $headers);
-        if ($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
-        else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
-      }
-    }
+$post = wp_remote_post($endpoint, $options);
+
+//var_dump($post);
+
+
+if (isset($_POST['btnSubmit'])) {
+
+  $response = json_decode($post['body'], true)['result'];
+
+  //var_dump($response);
+
+  if ($response) {
+    global $wpdb;
+
+    $token = json_decode($post['body'], true)['token'];
+    $name = json_decode($post['body'], true)['user']['first_name'];
+
+    $_POST['message_password'] = '';
+    $_POST['message_email'] = '';
+
+    $token = $token ?: 0;
+
+    $adminEmail = get_option('admin_email');
+    $subject = "Aktivacia robota";
+    $headers = 'From: ' . $adminEmail . "\r\n" .
+      'Reply-To: ' . $adminEmail . "\r\n";
+
+    $message = 'Ahoj ' . $name .  ",\r\n" . "\r\n" .
+      'Robot bude aktivovaný na tvojem Kelta účte '  . $email . ' do 24 hodín. ' . "\r\n" . "\r\n" .
+      'Pekný zvyšok dňa,' . "\r\n" . "\r\n" .
+      'Hilo Investment';
+
+    $data = array(
+      'email' => $email,
+      'token' => $token
+    );
+
+    $table_name = 'users_tokens';
+
+    $insertDB = $wpdb->insert($table_name, $data, $format = NUll);
+    $sent = wp_mail($email, $subject, strip_tags($message), $headers);
+
+    $showText = "Skontrolujte si potvrdzovací email.";
+  } else {
+    $showText = "Email, alebo Google autentifkačný kód sa nezohduje s existujúcim Kelta účtom.";
   }
-} else if ($_POST['submitted']) my_contact_form_generate_response("error", $missing_content);
+}
 
 ?>
 
-<?php get_header(); ?>
+<?php
+?>
 
-<div id="primary" class="site-content">
-  <div id="content" role="main">
+<div class="popup-form <?php echo $response === false ? 'active' :  ''  ?>">
+  <div class="container">
 
-    <?php while (have_posts()) : the_post(); ?>
+    <h4 class="instructions t-center">
+      Na aktiváciu robota, ktorý automaticky nastavuje ťažbu je potrebné zadať nasledujúce informácie.
+    </h4>
+    <?php
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-      <header class="entry-header">
-        <h1 class="entry-title"><?php the_title(); ?></h1>
-      </header>
-
-      <div class="entry-content">
-        <?php the_content(); ?>
-
-        <style type="text/css">
-        .error {
-          padding: 5px 9px;
-          border: 1px solid red;
-          color: red;
-          border-radius: 3px;
-        }
-
-        .success {
-          padding: 5px 9px;
-          border: 1px solid green;
-          color: green;
-          border-radius: 3px;
-        }
-
-        form span {
-          color: red;
-        }
-        </style>
-
-        <div id="respond">
-          <?php echo $response; ?>
-          <form action="<?php the_permalink(); ?>" method="post">
-            <p><label for="name">Name: <span>*</span> <br><input type="text" name="message_name"
-                  value="<?php echo esc_attr($_POST['message_name']); ?>"></label></p>
-            <p><label for="message_email">Email: <span>*</span> <br><input type="text" name="message_email"
-                  value="<?php echo esc_attr($_POST['message_email']); ?>"></label></p>
-            <p><label for="message_text">Message: <span>*</span> <br><textarea type="text"
-                  name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea></label></p>
-            <p><label for="message_human">Human Verification: <span>*</span> <br><input type="text" style="width: 60px;"
-                  name="message_human"> + 3 = 5</label></p>
-            <input type="hidden" name="submitted" value="1">
-            <p><input type="submit"></p>
-          </form>
-        </div>
-
-
-      </div><!-- .entry-content -->
-
-    </article><!-- #post -->
-
-    <?php endwhile; // end of the loop. 
+    // var_dump(json_decode(wp_remote_post($endpoint, $options)['body'], true)['token']);
     ?>
+    <form action="/form" method="post">
 
-  </div><!-- #content -->
-</div><!-- #primary -->
+      <!-- <div class="close">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/close-48.png" alt="close button">
+      </div> -->
+      <?php if ($response) { ?>
+      <div class="succeess-message">
+        <div class="close">
+          <!-- <i class="fas fa-times"></i> -->
+          <img src="<?php echo get_template_directory_uri(); ?>/images/close-48.png" alt="close button">
+        </div>
+        <h2>Aktivácia Robota</h2>
+        <?php echo $showText; ?> <br>
+        Ďakujeme <br> <br>
+        Hilo Investment
+      </div>
+      <?php } ?>
 
 
-<?php get_footer(); ?>
+      <label for="message_email">Email <br><input type="text" name="message_email"
+          value="<?php echo esc_attr($_POST['message_email']); ?>"></label>
+      <div class="email-error"></div>
+      <label for="message_password">Google Autentifikator <br><input type="text" name="message_password"
+          value="<?php echo esc_attr($_POST['message_password']); ?>"></label>
+      <div class="password-error"></div>
+      <input class="btn btn-yellow submit-btn" type="submit" name='btnSubmit' value='Odoslať'>
+      <?php if (!$response) { ?>
+      <div class="errors"><?php echo $showText; ?></div>
+      <?php
+      } ?>
+    </form>
+  </div>
+</div>
+
+<?php
+
+get_footer()
+
+?>

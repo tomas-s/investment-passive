@@ -11,7 +11,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <header class="header">
+  <!-- <header class="header">
     <div class="container">
       <div class="nav">
         <div class="logo">
@@ -22,8 +22,8 @@
             'theme_location' => 'mainMenu'
           ))
           ?>
-          <a href="/course" class="btn btn-black">Začať</a>
+          <a href="/robot" class="btn btn-black">Začať</a>
         </nav>
       </div>
     </div>
-  </header>
+  </header> -->

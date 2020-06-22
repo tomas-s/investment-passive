@@ -23,16 +23,33 @@ class Course {
       .find('.courses-levels button')
       .on('click', this._changeLevel.bind(this));
 
-    $('.popup-form .close').on('click', this._closePopup.bind(this));
+    // $('.popup-form .close').on('click', this._closePopup.bind(this));
+    // $('.popup-form').on('click', this._detectOutsideClick.bind(this));
 
     this.course.on('click', this._saveActualPosition.bind(this));
 
-    this.course
-      .find('.submit-btn')
-      .on('click', this._validateInputs.bind(this));
+    // $('.popup-form .submit-btn').on('click', this._validateInputs.bind(this));
   }
 
-  _validateInputs() {}
+  // _validateInputs(e) {
+  //   let autentifikatorMsg = '';
+  //   if (!this._checkAutentifikatorLength()) {
+  //     e.preventDefault();
+  //     autentifikatorMsg = 'Google Autentifikator musi mit 6 cislic';
+  //     this._showAutentifikatorError(autentifikatorMsg);
+  //   }
+
+  //   console.log(this._checkAutentifikatorLength());
+  // }
+
+  // _showAutentifikatorError(msg) {
+  //   $('.popup-form .password-error').text(msg);
+  // }
+
+  // _checkAutentifikatorLength() {
+  //   const value = $('input[name="message_password"]').val().trim();
+  //   return value.length == 6 ? true : false;
+  // }
 
   _saveActualPosition() {
     const index = this.course.find('.course-nav-sub-item.active').data('index');
@@ -157,9 +174,15 @@ class Course {
     $('.popup-form').addClass('active');
   }
 
-  _closePopup() {
-    $('.popup-form').removeClass('active');
-  }
+  // _closePopup() {
+  //   $('.popup-form').removeClass('active');
+  // }
+
+  // _detectOutsideClick(e) {
+  //   if ($(e.target).hasClass('container')) {
+  //     this._closePopup();
+  //   }
+  // }
 }
 
 export default Course;

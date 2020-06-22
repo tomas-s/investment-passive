@@ -844,46 +844,77 @@ li {
 .section-course .course-items .item .text {
       padding: 20px 20px 30px 20px; }
 .popup-form {
-  position: fixed;
-  top: 0;
-  height: 100%;
+  position: relative;
+  height: 100vh;
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
   z-index: 99999;
-  display: none; }
+  display: flex;
+  overflow: hidden; }
 .popup-form.active {
-    display: block; }
+    display: flex; }
+.popup-form h4 {
+    font-size: 19px;
+    margin-top: 2px; }
 .popup-form .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; }
+    position: static;
+    flex-direction: column; }
+.popup-form .succeess-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0b90b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 48px;
+    text-align: center; }
+.popup-form .succeess-message h2 {
+      margin-top: -40px; }
+@media (max-width: 530px) {
+      .popup-form .succeess-message {
+        font-size: 36px; } }
+.popup-form .succeess-message.closed {
+      -webkit-animation: hide 600ms forwards;
+              animation: hide 600ms forwards; }
 .popup-form form {
-    padding: 50px 30px 30px 30px;
+    padding: 10px 20px 100px 20px;
     background: #fff;
     border-radius: 2px;
     display: flex;
-    flex-direction: column;
-    position: relative;
-    -webkit-animation: popupOpen 400ms;
-            animation: popupOpen 400ms; }
+    flex-direction: column; }
+@media (max-width: 530px) {
+      .popup-form form {
+        padding: 10px 15px 50px 15px; } }
 .popup-form form .errors {
       color: #cc0000;
       font-size: 14px;
       text-align: center;
-      margin-bottom: 10px; }
-.popup-form form label {
-      margin-bottom: 15px; }
+      margin-bottom: 10px;
+      margin-top: 10px;
+      width: 260px; }
+.popup-form form .email-error,
+    .popup-form form .password-error {
+      margin: 4px 0 15px 0;
+      color: #cc0000;
+      font-size: 14px;
+      width: 260px; }
 .popup-form form input {
       padding: 10px;
-      min-width: 260px; }
+      min-width: 260px;
+      margin-top: 2px; }
 .popup-form form .close {
       position: absolute;
       top: 10px;
       right: 10px;
       cursor: pointer; }
 .popup-form form .close img {
-        width: 30px; }
+        width: 50px; }
 @-webkit-keyframes popupOpen {
   from {
     opacity: 0.5;
@@ -898,3 +929,13 @@ li {
   to {
     opacity: 1;
     transform: translateY(0); } }
+@-webkit-keyframes hide {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(110%); } }
+@keyframes hide {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(110%); } }

@@ -1,6 +1,7 @@
 <?php
 
 //response generation function
+get_header();
 
 global $response;
 global $showText;
@@ -24,16 +25,22 @@ $options = [
   'body'  => 'metoda=Login&email=' . $email . '&password=' . $pass,
 ];
 
+$post = wp_remote_post($endpoint, $options);
+
+//var_dump($post);
+
 
 if (isset($_POST['btnSubmit'])) {
 
-  $response = json_decode(wp_remote_post($endpoint, $options)['body'], true)['result'];
+  $response = json_decode($post['body'], true)['result'];
+
+  //var_dump($response);
 
   if ($response) {
     global $wpdb;
 
-    $token = json_decode(wp_remote_post($endpoint, $options)['body'], true)['token'];
-    $name = json_decode(wp_remote_post($endpoint, $options)['body'], true)['user']['first_name'];
+    $token = json_decode($post['body'], true)['token'];
+    $name = json_decode($post['body'], true)['user']['first_name'];
 
     $_POST['message_password'] = '';
     $_POST['message_email'] = '';
@@ -41,14 +48,14 @@ if (isset($_POST['btnSubmit'])) {
     $token = $token ?: 0;
 
     $adminEmail = get_option('admin_email');
-    $subject = "Optimalizacia bude brzy zapnuta ";
+    $subject = "Aktivacia robota";
     $headers = 'From: ' . $adminEmail . "\r\n" .
       'Reply-To: ' . $adminEmail . "\r\n";
 
     $message = 'Ahoj ' . $name .  ",\r\n" . "\r\n" .
-      'diky ze nam duverujes. Optimalizator bude pro tebe zapnuty do 2 hodin.' . "\r\n" . "\r\n" .
-      'Pekny zbytek dne preje,' . "\r\n" .
-      'tym Hilo Investment';
+      'Robot bude aktivovaný na tvojem Kelta účte '  . $email . ' do 24 hodín. ' . "\r\n" . "\r\n" .
+      'Pekný zvyšok dňa,' . "\r\n" . "\r\n" .
+      'Hilo Investment';
 
     $data = array(
       'email' => $email,
@@ -60,9 +67,9 @@ if (isset($_POST['btnSubmit'])) {
     $insertDB = $wpdb->insert($table_name, $data, $format = NUll);
     $sent = wp_mail($email, $subject, strip_tags($message), $headers);
 
-    $showText = "Optimalizator bude aktivovany do x hodin.";
+    $showText = "Robot bude aktivovaný do 24 hodín.";
   } else {
-    $showText = "Email, alebo Google autentifkačný kód sa nezohduje s existujucim Kelta učtom.";
+    $showText = "Email, alebo Google autentifkačný kód sa nezohduje s existujúcim Kelta účtom.";
   }
 }
 
@@ -73,17 +80,33 @@ if (isset($_POST['btnSubmit'])) {
 
 <div class="popup-form <?php echo $response === false ? 'active' :  ''  ?>">
   <div class="container">
+
+    <h4 class="instructions t-center">
+      Na aktiváciu robota, ktorý automaticky nastavuje ťažbu je potrebné zadať nasledujúce informácie.
+    </h4>
     <?php
 
     // var_dump(json_decode(wp_remote_post($endpoint, $options)['body'], true)['token']);
     ?>
     <form action="/robot" method="post">
-      <div class="close">
+
+      <!-- <div class="close">
         <img src="<?php echo get_template_directory_uri(); ?>/images/close-48.png" alt="close button">
+      </div> -->
+      <?php if ($response) { ?>
+      <div class="succeess-message">
+        <div class="close">
+          <!-- <i class="fas fa-times"></i> -->
+          <img src="<?php echo get_template_directory_uri(); ?>/images/close-48.png" alt="close button">
+        </div>
+        <h2>Aktivácia Robota</h2>
+        <?php echo $showText; ?> <br>
+        Ďakujeme <br> <br>
+        Hilo Investment
       </div>
-      <?php if (!$response) { ?>
-      <div class="errors"><?php echo $showText; ?></div>
       <?php } ?>
+
+
       <label for="message_email">Email <br><input type="text" name="message_email"
           value="<?php echo esc_attr($_POST['message_email']); ?>"></label>
       <div class="email-error"></div>
@@ -91,6 +114,16 @@ if (isset($_POST['btnSubmit'])) {
           value="<?php echo esc_attr($_POST['message_password']); ?>"></label>
       <div class="password-error"></div>
       <input class="btn btn-yellow submit-btn" type="submit" name='btnSubmit' value='Odoslať'>
+      <?php if (!$response) { ?>
+      <div class="errors"><?php echo $showText; ?></div>
+      <?php
+      } ?>
     </form>
   </div>
 </div>
+
+<?php
+
+get_footer()
+
+?>

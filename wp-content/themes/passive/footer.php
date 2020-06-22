@@ -1,4 +1,4 @@
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <div class="logo-socials">
       <h3>Hilo Investment</h3>
@@ -15,7 +15,7 @@
     </nav>
 
   </div>
-</footer>
+</footer> -->
 
 <?php wp_footer(); ?>
 </body>

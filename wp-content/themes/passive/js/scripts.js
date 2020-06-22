@@ -6,8 +6,9 @@ import $ from 'jquery';
 // import MobileMenu from './modules/MobileMenu';
 // import HeroSlider from './modules/HeroSlider';
 // import Gallery from './modules/Gallery';
-import Course from './modules/Course';
+import Course from './modules/robot';
 import Header from './modules/Header';
+import PopupForm from './modules/PopupForm';
 
 // Instantiate a new object using our modules/classes
 // var mobileMenu = new MobileMenu();
@@ -15,3 +16,4 @@ import Header from './modules/Header';
 // const gallery = new Gallery();
 const course = new Course();
 const header = new Header();
+const popupform = new PopupForm();
