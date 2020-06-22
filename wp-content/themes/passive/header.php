@@ -11,7 +11,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- <header class="header">
+  <header class="header">
     <div class="container">
       <div class="nav">
         <div class="logo">
@@ -26,4 +26,4 @@
         </nav>
       </div>
     </div>
-  </header> -->
+  </header>
