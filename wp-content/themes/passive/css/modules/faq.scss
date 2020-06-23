@@ -1,0 +1,45 @@
+.faq {
+  background: $light-grey;
+
+  .collapse {
+    margin: 5px 10%;
+    border: 1px solid lighten($black, 70%);
+    padding: 10px;
+    border-radius: 5px;
+    @include atSmall {
+      margin: 5px 0;
+    }
+
+    &.open {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+
+    .faq-title {
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+      padding: 5px 0;
+
+      h3 {
+        margin: 0;
+      }
+
+      i {
+        transition: all 300ms;
+        transform-origin: center;
+      }
+    }
+
+    &-content {
+      display: none;
+
+      p:last-of-type,
+      ol:last-of-type,
+      ul:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

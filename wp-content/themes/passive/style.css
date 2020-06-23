@@ -474,7 +474,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center; }
-@media (max-width: 960px) {
+@media (max-width: 530px) {
       .pha .container {
         flex-direction: column; } }
 .pha-left {
@@ -483,7 +483,7 @@ li {
     padding: 70px 40px;
     position: relative;
     flex: 1; }
-@media (max-width: 960px) {
+@media (max-width: 530px) {
       .pha-left {
         margin-right: 0; } }
 .pha-left:after {
@@ -496,7 +496,7 @@ li {
       left: 99%;
       height: 100%;
       top: 0; }
-@media (max-width: 960px) {
+@media (max-width: 530px) {
         .pha-left:after {
           left: 0;
           top: 99%;
@@ -765,3 +765,38 @@ li {
     transform: translateY(0); }
   to {
     transform: translateY(110%); } }
+.sentence h2 {
+  font-size: 92px;
+  position: relative;
+  display: inline-block;
+  line-height: 1.2; }
+.sentence h2 span {
+    background: linear-gradient(0deg, transparent 7%, #f0b90b 7%, #f0b90b 15%, transparent 15%); }
+.faq {
+  background: #f5f5fb; }
+.faq .collapse {
+    margin: 5px 10%;
+    border: 1px solid #d2d2d2;
+    padding: 10px;
+    border-radius: 5px; }
+@media (max-width: 530px) {
+      .faq .collapse {
+        margin: 5px 0; } }
+.faq .collapse.open i {
+      transform: rotate(180deg); }
+.faq .collapse .faq-title {
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+      padding: 5px 0; }
+.faq .collapse .faq-title h3 {
+        margin: 0; }
+.faq .collapse .faq-title i {
+        transition: all 300ms;
+        transform-origin: center; }
+.faq .collapse-content {
+      display: none; }
+.faq .collapse-content p:last-of-type,
+      .faq .collapse-content ol:last-of-type,
+      .faq .collapse-content ul:last-of-type {
+        margin-bottom: 0; }

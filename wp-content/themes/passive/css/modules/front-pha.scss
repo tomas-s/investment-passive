@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include atMedium {
+    @include atSmall {
       flex-direction: column;
     }
   }
@@ -19,7 +19,7 @@
     padding: 70px 40px;
     position: relative;
     flex: 1;
-    @include atMedium {
+    @include atSmall {
       margin-right: 0;
     }
 
@@ -32,7 +32,7 @@
       left: 99%;
       height: 100%;
       top: 0;
-      @include atMedium {
+      @include atSmall {
         left: 0;
         top: 99%;
         width: 100%;

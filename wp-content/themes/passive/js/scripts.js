@@ -1,14 +1,15 @@
 // 3rd party packages from NPM
-import $ from 'jquery';
+// import $ from 'jquery';
 // import slick from 'slick-carousel';
 
 // Our modules / classes
 // import MobileMenu from './modules/MobileMenu';
 // import HeroSlider from './modules/HeroSlider';
 // import Gallery from './modules/Gallery';
-import Course from './modules/robot';
+import Course from './modules/Course';
 import Header from './modules/Header';
 import PopupForm from './modules/PopupForm';
+import FAQ from './modules/Faq';
 
 // Instantiate a new object using our modules/classes
 // var mobileMenu = new MobileMenu();
@@ -17,3 +18,4 @@ import PopupForm from './modules/PopupForm';
 const course = new Course();
 const header = new Header();
 const popupform = new PopupForm();
+const faq = new FAQ();
