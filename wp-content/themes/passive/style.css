@@ -625,11 +625,25 @@ li {
     font-weight: 300;
     font-size: 42px;
     margin: 20px 0; }
-.benefits-items {
+.benefits-items-icons, .benefits-items-text {
     display: flex; }
-.benefits-items .benefits-item {
-      padding: 10px 20px;
-      flex: 1; }
+.benefits-items-icons .benefits-item, .benefits-items-text .benefits-item {
+      padding: 0px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+.benefits-items-icons .benefits-item p, .benefits-items-text .benefits-item p {
+        text-align: center; }
+.benefits-items-icons .benefits-item img, .benefits-items-text .benefits-item img {
+        width: 40%; }
+.benefits-items-icons .benefits-item img.time, .benefits-items-text .benefits-item img.time {
+          width: 30%; }
+.benefits-items-icons .benefits-item img.upto, .benefits-items-text .benefits-item img.upto {
+          width: 60%; }
+.benefits-items-text .benefits-item {
+    justify-content: flex-start; }
 .section-course .course-items {
   display: flex;
   justify-content: center; }
