@@ -765,13 +765,15 @@ li {
     transform: translateY(0); }
   to {
     transform: translateY(110%); } }
+.sentence {
+  padding: 25vh 0; }
 .sentence h2 {
-  font-size: 92px;
-  position: relative;
-  display: inline-block;
-  line-height: 1.2; }
+    font-size: 92px;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2; }
 .sentence h2 span {
-    background: linear-gradient(0deg, transparent 7%, #f0b90b 7%, #f0b90b 15%, transparent 15%); }
+      background: linear-gradient(0deg, transparent 7%, #f0b90b 7%, #f0b90b 15%, transparent 15%); }
 .faq {
   background: #f5f5fb; }
 .faq .collapse {
