@@ -485,7 +485,8 @@ li {
     flex: 1; }
 @media (max-width: 530px) {
       .pha-left {
-        margin-right: 0; } }
+        margin-right: 0;
+        padding: 30px 40px; } }
 .pha-left:after {
       position: absolute;
       content: '';
