@@ -9,7 +9,7 @@
           rodine, priateľom, koníčkom a pod. (KOMFORT)</p> -->
       </div>
       <div class="benefits-item">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/icons/time.svg" class="time" alt="24/7 icon">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/icons/time.png" class="time" alt="24/7 icon">
         <!-- <p>HILO je nezastaviteľný, beží 24/7 (NEZASTAVITELNY)</p> -->
       </div>
       <div class="benefits-item">
