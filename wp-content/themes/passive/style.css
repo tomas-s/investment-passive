@@ -583,10 +583,7 @@ li {
     transform-origin: 0 100%;
     background-color: #ffd500; }
 .ova {
-  padding: 30px;
-  background: #f5f5fb;
-  -webkit-clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%); }
+  padding: 30px; }
 .ova .container {
     display: flex;
     flex-direction: column;

@@ -28,13 +28,13 @@ get_header(); ?>
 <?php get_template_part('sections/faq'); ?>
 
 
-<!-- <div class="ova">
+<div class="ova">
   <div class="container">
     <h3>It’s time to start
       investing in yourself</h3>
     <a href="/robot" class="btn btn-black">Začať</a>
   </div>
-</div> -->
+</div>
 
 
 <?php
