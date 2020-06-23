@@ -589,7 +589,10 @@ li {
     transform-origin: 0 100%;
     background-color: #ffd500; }
 .ova {
-  padding: 30px; }
+  padding: 30px;
+  background: #f5f5fb;
+  -webkit-clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%); }
 .ova .container {
     display: flex;
     flex-direction: column;
@@ -845,3 +848,39 @@ li {
       .faq .collapse-content ol:last-of-type,
       .faq .collapse-content ul:last-of-type {
         margin-bottom: 0; }
+.testimonials .carousel-btns {
+  display: flex; }
+.testimonials .carousel-btns .carousel {
+    position: relative;
+    overflow: hidden;
+    height: 140px;
+    flex: 5; }
+.testimonials .carousel-btns .carousel-item {
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 95%;
+      position: absolute;
+      transform: translateX(100%);
+      transition: all 1s;
+      background: #fff;
+      padding: 10px 20px; }
+.testimonials .carousel-btns .carousel-item p {
+        margin-bottom: 10px; }
+.testimonials .carousel-btns .carousel-item .author {
+        font-size: 1.1rem;
+        font-weight: 500; }
+.testimonials .carousel-btns .carousel-item.active {
+        transform: translateX(0); }
+.testimonials .carousel-btns .buttons {
+    flex: 1;
+    padding: 20px 5px; }
+.testimonials .carousel-btns .buttons span {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 2px; }
+.testimonials .carousel-btns .buttons button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.4rem; }

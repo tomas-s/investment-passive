@@ -20,6 +20,24 @@ function custom_theme_post_types()
     'menu_icon' => 'dashicons-calendar-alt'
   ));
 
+  register_post_type('testimonials', array(
+    'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'post-formats', 'comments'),
+    'rewrite' => array(
+      'slug' => 'testimonials'
+    ),
+    'has_archive' => true,
+    'public' => true,
+    'show_in_rest' => true,
+    'labels' => array(
+      'name' => 'Testimonials',
+      'add_new_item' => 'Add New Testimonials',
+      'edit_item' => 'Edit Testimonials',
+      'all_items' => 'All Testimonials',
+      'singular_name' => 'Testimonials'
+    ),
+    'menu_icon' => 'dashicons-editor-quote'
+  ));
+
   // register_post_type('test',array(
   //   'supports' => array('title','editor','excerpt'),
   //   'rewrite' => array(

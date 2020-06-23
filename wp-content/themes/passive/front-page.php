@@ -27,6 +27,8 @@ get_header(); ?>
 <?php get_template_part('sections/sentence'); ?>
 <?php get_template_part('sections/faq'); ?>
 
+<?php get_template_part('sections/testimonials'); ?>
+
 
 <div class="ova">
   <div class="container">

@@ -4,7 +4,6 @@ class PopupForm {
   constructor() {
     this.popup = $('.popup-form');
     this.events();
-    console.log(1);
   }
 
   events() {

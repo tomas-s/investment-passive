@@ -10,6 +10,7 @@ import Course from './modules/Course';
 import Header from './modules/Header';
 import PopupForm from './modules/PopupForm';
 import FAQ from './modules/Faq';
+import Testimonials from './modules/Testimonials';
 
 // Instantiate a new object using our modules/classes
 // var mobileMenu = new MobileMenu();
@@ -19,3 +20,4 @@ const course = new Course();
 const header = new Header();
 const popupform = new PopupForm();
 const faq = new FAQ();
+const testimonials = new Testimonials();
