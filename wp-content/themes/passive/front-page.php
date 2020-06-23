@@ -6,7 +6,7 @@ get_header(); ?>
   <div class="container">
     <div class="pha-left">
       <h2>Optimalizuj svoj <span>pasívny</span> príjem</h2>
-      <h4>Jedna vec, ktorá vám umožní nie len chcieť viac, ale aj mať viac.</h4>
+      <h4>Jedna vec, ktorá Vám umožní mať konštantne vyššie týždenné payouty bez manuálneho nastavovania ťažby kryptomien.</h4>
       <div>
         <a href="/robot" class="btn btn-black">Začať</a>
       </div>
