@@ -3,6 +3,10 @@
   min-height: 500px;
   display: flex;
   align-items: center;
+  @include atSmall {
+    height: unset;
+    padding-top: 20px;
+  }
 
   .container {
     display: flex;
@@ -14,14 +18,17 @@
   }
 
   &-left {
-    margin-right: 40px;
+    // margin-right: 40px;
     background: $yellow;
     padding: 70px 40px;
     position: relative;
     flex: 1;
-    @include atSmall {
+    @include atSmallMedium {
       margin-right: 0;
-      padding: 30px 40px;
+      padding: 50px 40px;
+    }
+    @include atSmall {
+      padding: 30px 30px 10px 30px;
     }
 
     &:after {
