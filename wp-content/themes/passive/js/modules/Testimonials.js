@@ -65,7 +65,7 @@ class Testimonials {
     $(slides).css('height', Math.max(...slidesHeight));
     this.testimonials
       .find('.carousel')
-      .css('height', Math.max(...slidesHeight));
+      .css('height', Math.max(...slidesHeight) + 10);
   }
 }
 
