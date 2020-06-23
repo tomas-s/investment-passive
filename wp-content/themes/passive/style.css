@@ -564,128 +564,6 @@ li {
     width: 0; }
   to {
     width: 98%; } }
-.course {
-  background: #1f1f1f;
-  position: relative;
-  display: flex; }
-@media (max-width: 960px) {
-    .course {
-      flex-direction: column; } }
-.course .course-nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    min-width: 280px;
-    max-width: 400px;
-    flex: 2;
-    background: #333333;
-    position: relative; }
-@media (max-width: 960px) {
-      .course .course-nav {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: unset; } }
-.course .course-nav .course-nav-item {
-      color: #fff;
-      border-bottom: 0.5px solid #525252;
-      cursor: pointer;
-      font-weight: 300;
-      align-items: baseline;
-      background: #333333; }
-.course .course-nav .course-nav-item .sub-menu {
-        flex-basis: 100%;
-        margin: 0;
-        list-style-type: none;
-        padding-left: 0;
-        display: none; }
-.course .course-nav .course-nav-item .sub-menu .course-nav-sub-item {
-          border-top: 0.5px solid #525252;
-          border-right: none;
-          padding: 10px 20px 10px 40px;
-          background: #333333;
-          transition: all 200ms; }
-.course .course-nav .course-nav-item .sub-menu .course-nav-sub-item:hover {
-            background: #292929; }
-.course .course-nav .course-nav-item .sub-menu .course-nav-sub-item.active {
-            background: #292929; }
-@media (max-width: 960px) {
-          .course .course-nav .course-nav-item .sub-menu {
-            padding-left: 0;
-            margin-left: 0;
-            margin-right: 0; } }
-@media (max-width: 960px) {
-        .course .course-nav .course-nav-item {
-          border-bottom: none;
-          border-right: 0.5px solid #525252;
-          justify-content: center;
-          padding: 10px 0; } }
-.course .course-nav .course-nav-item:last-child {
-        border-bottom: none;
-        border-right: none; }
-.course .course-nav .course-nav-item .section {
-        font-weight: 100;
-        font-size: 0.9rem;
-        padding: 10px 20px;
-        font-weight: 700;
-        display: block; }
-@media (max-width: 960px) {
-        .course .course-nav .course-nav-item .title {
-          display: none; } }
-.course .course-nav .content {
-      display: none; }
-.course .right-panel {
-    flex: 5;
-    display: flex;
-    flex-direction: column; }
-.course .right-panel .shown-content {
-      padding: 20px 80px; }
-.course .right-panel .shown-content .content {
-        display: flex;
-        flex-direction: column; }
-.course .right-panel .shown-content .content h3 {
-          font-size: 28px; }
-.course .right-panel .shown-content .content .video {
-          width: 90%;
-          max-width: 1000px;
-          align-self: center; }
-.course .right-panel .shown-content .content .video-wrapper {
-          position: relative;
-          padding-bottom: 56.25%;
-          /* 16:9 */
-          height: 0; }
-.course .right-panel .shown-content .content .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; }
-.course .right-panel .shown-content * {
-        color: #fff;
-        font-weight: 300; }
-.course .right-panel .shown-content .btn-popup {
-        color: #1f1f1f;
-        align-self: center; }
-.course .right-panel .buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px; }
-.course .right-panel .buttons.f-end {
-        justify-content: flex-end; }
-.course .right-panel .buttons .next-lesson {
-        justify-self: flex-end; }
-.course .right-panel .buttons .next-lesson,
-      .course .right-panel .buttons .prev-lesson {
-        border: none;
-        background: transparent;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 3px;
-        padding: 0;
-        transition: all 300ms;
-        outline: none; }
-.course .right-panel .buttons .next-lesson:hover,
-        .course .right-panel .buttons .prev-lesson:hover {
-          text-decoration: underline; }
 .brno h2 {
   text-transform: uppercase;
   font-weight: 500;
@@ -739,74 +617,6 @@ li {
       list-style-type: none; }
 .footer nav ul a {
         text-decoration: none; }
-.courses {
-  background: #1f1f1f; }
-.courses .container {
-    padding: 0; }
-.courses .success-msg {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #00801e;
-    padding: 0 10px;
-    background: #fff;
-    height: 70px;
-    -webkit-animation: hideMsg 600ms 8s forwards;
-            animation: hideMsg 600ms 8s forwards; }
-.courses-levels {
-    display: flex;
-    padding-top: 10px;
-    justify-content: center;
-    align-items: flex-end;
-    background: #1f1f1f; }
-@media (max-width: 960px) {
-      .courses-levels {
-        flex-basis: 100%; } }
-.courses-levels button {
-      border: none;
-      padding: 10px 20px;
-      background: transparent;
-      font-weight: 300;
-      cursor: pointer;
-      outline: none;
-      color: #fff;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      flex: 1;
-      transition: all 250ms; }
-.courses-levels button:not(.active) span:before {
-        background-color: transparent; }
-.courses-levels button.active {
-        background: #333333; }
-.courses-levels button:hover {
-        background: #333333; }
-.courses-levels button span {
-        position: relative;
-        padding-left: 25px;
-        text-transform: uppercase; }
-.courses-levels button span:before {
-          content: '';
-          position: absolute;
-          display: block;
-          top: 0px;
-          left: 5px;
-          width: 5px;
-          height: 100%;
-          transform: skewX(-25deg);
-          transform-origin: 0 100%;
-          background-color: #f0b90b; }
-@-webkit-keyframes hideMsg {
-  from {
-    height: 70px; }
-  to {
-    height: 0; } }
-@keyframes hideMsg {
-  from {
-    height: 70px; }
-  to {
-    height: 0; } }
 .benefits {
   background: #f5f5fb;
   -webkit-clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%);
@@ -818,7 +628,8 @@ li {
 .benefits-items {
     display: flex; }
 .benefits-items .benefits-item {
-      padding: 10px 20px; }
+      padding: 10px 20px;
+      flex: 1; }
 .section-course .course-items {
   display: flex;
   justify-content: center; }
