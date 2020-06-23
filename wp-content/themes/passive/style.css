@@ -850,21 +850,25 @@ li {
         margin-bottom: 0; }
 .testimonials .carousel-btns {
   display: flex; }
+@media (max-width: 767px) {
+    .testimonials .carousel-btns {
+      flex-direction: column-reverse; } }
 .testimonials .carousel-btns .carousel {
     position: relative;
     overflow: hidden;
-    height: 140px;
     flex: 5; }
+@media (max-width: 767px) {
+      .testimonials .carousel-btns .carousel {
+        flex: 0 1 auto; } }
 .testimonials .carousel-btns .carousel-item {
       top: 0;
       left: 0;
-      height: 100%;
-      width: 95%;
+      padding: 5px;
+      width: calc(100%-10px);
       position: absolute;
       transform: translateX(100%);
       transition: all 1s;
-      background: #fff;
-      padding: 10px 20px; }
+      background: #fff; }
 .testimonials .carousel-btns .carousel-item p {
         margin-bottom: 10px; }
 .testimonials .carousel-btns .carousel-item .author {

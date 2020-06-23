@@ -5,6 +5,7 @@ class Testimonials {
     this.testimonials = $('.testimonials');
     this.events();
     this.initialCounter();
+    this.initialHeight();
   }
 
   events() {
@@ -49,6 +50,22 @@ class Testimonials {
     this.testimonials
       .find('.testimonials-end')
       .text(slides.length < 10 ? `0${slides.length}` : slides.length);
+  }
+
+  initialHeight() {
+    const slides = this.testimonials.find('.carousel-item');
+    const slidesHeight = [];
+
+    $.each(slides, (i, slide) => {
+      slidesHeight.push($(slide).height());
+    });
+
+    // console.log(slidesHeight);
+    // console.log(Math.max(...slidesHeight));
+    $(slides).css('height', Math.max(...slidesHeight));
+    this.testimonials
+      .find('.carousel')
+      .css('height', Math.max(...slidesHeight));
   }
 }
 
