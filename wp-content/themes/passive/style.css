@@ -643,9 +643,10 @@ li {
       justify-content: center;
       align-items: center; }
 .benefits-items-icons .benefits-item p, .benefits-items-text .benefits-item p {
-        text-align: center; }
+        text-align: center;
+        margin-bottom: 10px; }
 .benefits-items-icons .benefits-item p b, .benefits-items-text .benefits-item p b {
-          font-size: 1.3rem; }
+          font-size: 1.6rem; }
 .benefits-items-icons .benefits-item img, .benefits-items-text .benefits-item img {
         width: 40%; }
 .benefits-items-icons .benefits-item img.time, .benefits-items-text .benefits-item img.time {
