@@ -1,5 +1,9 @@
 .benefits {
   @include greySection;
+  @include atSmallMedium {
+    // background: $light-grey;
+    clip-path: none;
+  }
 
   h3 {
     font-weight: 300;
@@ -40,5 +44,48 @@
 
   &-items-text .benefits-item {
     justify-content: flex-start;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  @include atSmallMedium {
+    &-items-icons {
+      display: none;
+    }
+
+    &-items-text {
+      flex-direction: column;
+
+      .benefits-item {
+        // align-items: flex-start;
+        align-items: center;
+        // flex-direction: row;
+        padding: 0px;
+
+        .mobile-only {
+          display: block;
+          flex: 1;
+          width: 22%;
+          margin: 20px;
+
+          &.time {
+            width: 15%;
+            height: 45%;
+          }
+
+          &.upto {
+            width: 30%;
+          }
+        }
+
+        p {
+          // text-align: left;
+          flex: 4;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }

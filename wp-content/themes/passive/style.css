@@ -621,6 +621,10 @@ li {
   background: #f5f5fb;
   -webkit-clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%); }
+@media (max-width: 767px) {
+    .benefits {
+      -webkit-clip-path: none;
+              clip-path: none; } }
 .benefits h3 {
     font-weight: 300;
     font-size: 42px;
@@ -645,6 +649,29 @@ li {
           width: 60%; }
 .benefits-items-text .benefits-item {
     justify-content: flex-start; }
+.benefits .mobile-only {
+    display: none; }
+@media (max-width: 767px) {
+    .benefits-items-icons {
+      display: none; }
+    .benefits-items-text {
+      flex-direction: column; }
+      .benefits-items-text .benefits-item {
+        align-items: center;
+        padding: 0px; }
+        .benefits-items-text .benefits-item .mobile-only {
+          display: block;
+          flex: 1;
+          width: 22%;
+          margin: 20px; }
+          .benefits-items-text .benefits-item .mobile-only.time {
+            width: 15%;
+            height: 45%; }
+          .benefits-items-text .benefits-item .mobile-only.upto {
+            width: 30%; }
+        .benefits-items-text .benefits-item p {
+          flex: 4;
+          margin-bottom: 0; } }
 .section-course .course-items {
   display: flex;
   justify-content: center; }
@@ -767,11 +794,23 @@ li {
     transform: translateY(110%); } }
 .sentence {
   padding: 25vh 0; }
+@media (max-width: 767px) {
+    .sentence {
+      padding: 25vh 0; } }
+@media (max-width: 530px) {
+    .sentence {
+      padding: 20vh 0; } }
 .sentence h2 {
     font-size: 92px;
     position: relative;
     display: inline-block;
     line-height: 1.2; }
+@media (max-width: 767px) {
+      .sentence h2 {
+        font-size: 65px; } }
+@media (max-width: 530px) {
+      .sentence h2 {
+        font-size: 50px; } }
 .sentence h2 span {
       background: linear-gradient(0deg, transparent 7%, #f0b90b 7%, #f0b90b 15%, transparent 15%); }
 .faq {

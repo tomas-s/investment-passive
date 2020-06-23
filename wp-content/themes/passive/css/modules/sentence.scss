@@ -1,11 +1,23 @@
 .sentence {
   padding: 25vh 0;
+  @include atSmallMedium {
+    padding: 25vh 0;
+  }
+  @include atSmall {
+    padding: 20vh 0;
+  }
 
   h2 {
     font-size: 92px;
     position: relative;
     display: inline-block;
     line-height: 1.2;
+    @include atSmallMedium {
+      font-size: 65px;
+    }
+    @include atSmall {
+      font-size: 50px;
+    }
 
     span {
       background: linear-gradient(
