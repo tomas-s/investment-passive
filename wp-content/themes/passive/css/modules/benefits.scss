@@ -59,9 +59,7 @@
       flex-direction: column;
 
       .benefits-item {
-        // align-items: flex-start;
         align-items: center;
-        // flex-direction: row;
         padding: 0px;
 
         .mobile-only {
@@ -78,12 +76,6 @@
           &.upto {
             width: 30%;
           }
-        }
-
-        p {
-          // text-align: left;
-          flex: 4;
-          margin-bottom: 0;
         }
       }
     }
