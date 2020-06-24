@@ -60,8 +60,6 @@ class Testimonials {
       slidesHeight.push($(slide).height());
     });
 
-    // console.log(slidesHeight);
-    // console.log(Math.max(...slidesHeight));
     $(slides).css('height', Math.max(...slidesHeight));
     this.testimonials
       .find('.carousel')

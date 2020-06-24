@@ -13,11 +13,6 @@ get_header(); ?>
       </div>
     </div>
     <div class="pha-right">
-      <!-- <div class="video">
-        <video id="video1" autoplay="">
-          <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" type="video/mp4">
-        </video>
-      </div> -->
       <img src="<?php echo get_template_directory_uri(); ?>/images/robot.png" class="robot" alt="robot icon">
     </div>
   </div>
@@ -25,9 +20,23 @@ get_header(); ?>
 
 <?php get_template_part('sections/benefits'); ?>
 <?php get_template_part('sections/sentence'); ?>
-<?php get_template_part('sections/faq'); ?>
+<?php 
+$faqs = new WP_Query(array(
+  'post_type' => 'FAQ'
+));
+if($faqs->have_posts()){
+  get_template_part('sections/faq'); 
+}
+?>
 
-<?php get_template_part('sections/testimonials'); ?>
+<?php
+$testimonials = new WP_Query(array(
+  'post_type' => 'testimonials'
+));
+if($testimonials->have_posts()){
+  get_template_part('sections/testimonials');
+}
+?>
 
 
 <div class="ova">
