@@ -41,8 +41,7 @@ if($testimonials->have_posts()){
 
 <div class="ova">
   <div class="container">
-    <h3>It’s time to start
-      investing in yourself</h3>
+    <h3>Nastal čas si zjednodušiť život</h3>
     <a href="/robot" class="btn btn-black">Začať</a>
   </div>
 </div>
