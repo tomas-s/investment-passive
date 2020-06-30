@@ -5,6 +5,7 @@
     <?php
     $homepagePosts = new WP_Query(array(
       'post_type' => 'FAQ',
+      'orderby' => 'ID',
       'order'   => 'ASC'
     ));
     while ($homepagePosts->have_posts()) {
