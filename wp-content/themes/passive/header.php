@@ -13,6 +13,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
   <header class="header">
     <div class="container">
       <div class="nav">
@@ -24,7 +25,14 @@
             'theme_location' => 'mainMenu'
           ))
           ?>
+          <?php
+          $post = $wp_query->get_queried_object();
+          $pagename = $post->post_name;
+          if ($pagename != 'robot') {
+          ?>
           <a href="/robot" class="btn btn-black">Začať</a>
+          <?php   }
+          ?>
         </nav>
       </div>
     </div>
