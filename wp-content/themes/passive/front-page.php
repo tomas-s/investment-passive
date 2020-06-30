@@ -20,13 +20,13 @@ get_header(); ?>
 
 <?php get_template_part('sections/benefits'); ?>
 <?php get_template_part('sections/sentence'); ?>
-<?php 
+<?php
 $faqs = new WP_Query(array(
   'post_type' => 'FAQ',
-  'order'   => 'DESC',
+  'order'   => 'ASC',
 ));
-if($faqs->have_posts()){
-  get_template_part('sections/faq'); 
+if ($faqs->have_posts()) {
+  get_template_part('sections/faq');
 }
 ?>
 
@@ -34,7 +34,7 @@ if($faqs->have_posts()){
 $testimonials = new WP_Query(array(
   'post_type' => 'testimonials'
 ));
-if($testimonials->have_posts()){
+if ($testimonials->have_posts()) {
   get_template_part('sections/testimonials');
 }
 ?>
