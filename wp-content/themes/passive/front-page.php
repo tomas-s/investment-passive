@@ -22,8 +22,7 @@ get_header(); ?>
 <?php get_template_part('sections/sentence'); ?>
 <?php
 $faqs = new WP_Query(array(
-  'post_type' => 'FAQ',
-  'order'   => 'ASC',
+  'post_type' => 'FAQ'
 ));
 if ($faqs->have_posts()) {
   get_template_part('sections/faq');

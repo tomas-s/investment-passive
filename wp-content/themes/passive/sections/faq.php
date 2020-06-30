@@ -4,8 +4,8 @@
     <!-- <h3 class="section-subheadline"></h3> -->
     <?php
     $homepagePosts = new WP_Query(array(
-      'posts_per_page' => 10,
-      'post_type' => 'FAQ'
+      'post_type' => 'FAQ',
+      'order'   => 'ASC'
     ));
     while ($homepagePosts->have_posts()) {
       $homepagePosts->the_post();
