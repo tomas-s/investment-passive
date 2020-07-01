@@ -409,7 +409,8 @@ li {
 .header .nav {
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    min-height: 40px; }
 .header .nav .logo a {
       text-decoration: none;
       color: #1f1f1f; }
