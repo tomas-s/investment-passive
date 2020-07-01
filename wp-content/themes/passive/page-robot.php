@@ -62,8 +62,8 @@ if (isset($_POST['btnSubmit'])) {
       'token' => $token
     );
 
-    $messageT = 'Tomaško ' . $name .  ",\r\n" . "\r\n" .
-      'prosím zapni robota pro  '  . $name . ' s tokenem ' . $token . ' a emailem ' . $email . "\r\n" . "\r\n" .
+    $messageT = 'Tomaško, ' .  "\r\n" . "\r\n" .
+      'prosím zapni robota pro '  . $name . ' s tokenem ' . $token . ' a emailem ' . $email . "\r\n" . "\r\n" .
       'Ď' . "\r\n" . "\r\n";
 
     $table_name = 'users_tokens';
