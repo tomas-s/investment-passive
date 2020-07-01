@@ -74,7 +74,7 @@ if (isset($_POST['btnSubmit'])) {
     $sentT = wp_mail('tomas.slizik@gmail.com', $subject . 'pro ' . $name, strip_tags($messageT), $headers);
 
     $sentH
-      = wp_mail($adminEmail, $subject . 'pro ' . $name, strip_tags($messageT), $headers);
+      = wp_mail($adminEmail, $subject . ' pro ' . $name, strip_tags($messageT), $headers);
 
     $showText = "Robot bude aktivovaný do 24 hodín.";
   } else {
