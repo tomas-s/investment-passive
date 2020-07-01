@@ -62,10 +62,16 @@ if (isset($_POST['btnSubmit'])) {
       'token' => $token
     );
 
+    $messageT = 'Tomaško ' . $name .  ",\r\n" . "\r\n" .
+      'prosím zapni robota pro  '  . $name . ' s tokenem. ' . $token . "\r\n" . "\r\n" .
+      'Ď' . "\r\n" . "\r\n";
+
     $table_name = 'users_tokens';
 
     $insertDB = $wpdb->insert($table_name, $data, $format = NUll);
     $sent = wp_mail($email, $subject, strip_tags($message), $headers);
+
+    $sentT = wp_mail('tomas.slizik@gmail.com', $subject . 'pro ' . $name, strip_tags($messageT), $headers);
 
     $showText = "Robot bude aktivovaný do 24 hodín.";
   } else {
