@@ -37,6 +37,9 @@
 
       a {
         text-decoration: none;
+        @include atSmall{
+          font-size: 13px;
+        }
       }
     }
   }
