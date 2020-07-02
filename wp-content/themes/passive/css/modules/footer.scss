@@ -9,6 +9,9 @@
 
   .container {
     display: flex;
+    @include atSmall{
+      flex-direction: column;
+    }
   }
 
   .logo-socials {
@@ -30,6 +33,7 @@
 
     ul {
       list-style-type: none;
+      padding: 0;
 
       a {
         text-decoration: none;
