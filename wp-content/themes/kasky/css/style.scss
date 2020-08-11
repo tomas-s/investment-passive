@@ -1,0 +1,20 @@
+/*
+Theme Name: University Theme
+Author: RS
+Version: 1.0
+*/
+
+/* 3rd party packages */
+@import 'normalize.css';
+// @import 'reset-css';
+@import 'slick-carousel/slick/slick.css';
+
+/* SASS and Global'ish Stuff */
+@import 'base/variables';
+@import 'base/baseline';
+@import 'base/utility-classes';
+
+/* BEM Blocks */
+@import 'modules/header';
+@import 'modules/front-page';
+@import 'modules/gallery';

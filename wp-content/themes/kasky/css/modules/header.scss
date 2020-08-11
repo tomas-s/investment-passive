@@ -1,0 +1,26 @@
+.header{
+  // position: fixed;
+  background: $black;
+  width: 100%;
+  padding: 10px 0;
+
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav{
+
+      .menu{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin-bottom: 0;
+
+        &-item{
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.brno {
+  padding-top: 20px;
+
+  .portfolio-post {
+    display: flex;
+    margin-top: 30px;
+    cursor: pointer;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    .portfolio-headlines {
+      flex-basis: 40%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px;
+    }
+
+    .img {
+      flex-basis: 60%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
