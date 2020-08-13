@@ -1,56 +1,201 @@
-.header{
-  // position: fixed;
+.header {
+  position: fixed;
   background: $black;
   width: 100%;
   padding: 18px 0;
-  border-bottom: 1px solid lighten($black,20%);
+  border-bottom: 1px solid lighten($black, 20%);
+  z-index: 9999;
 
-  .socials{
-    i{
-      margin-left: 8px;
-      font-size: 1.2rem;
-      color: lighten($black,70%);
+  .container {
+    position: static;
+  }
+
+  * {
+    transition: 0.25s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  #menu-toggle {
+    width: 45px;
+    height: 40px;
+    position: relative;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid lighten($black, 20%);
+
+    @include atSmallMedium {
+      display: none;
+    }
+
+    span {
+      display: block;
+      background: darken($white, 10%);
+      border-radius: 2px;
+    }
+
+    &:hover {
+      // background:rgba(255,255,255,.8);
+    }
+
+    #hamburger {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      span {
+        width: 28px;
+        height: 2px;
+        position: relative;
+        top: 0px;
+        left: 8px;
+        margin: 8px 0;
+        &:nth-child(1) {
+          transition-delay: 0.5s;
+        }
+        &:nth-child(2) {
+          transition-delay: 0.625s;
+        }
+        &:nth-child(3) {
+          transition-delay: 0.75s;
+        }
+      }
+    }
+
+    #cross {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      transform: rotate(45deg);
+      span {
+        &:nth-child(1) {
+          height: 0%;
+          width: 2px;
+          position: absolute;
+          top: 9%;
+          left: 21px;
+          transition-delay: 0s;
+        }
+        &:nth-child(2) {
+          width: 0%;
+          height: 2px;
+          position: absolute;
+          left: 12%;
+          top: 19px;
+          transition-delay: 0.25s;
+        }
+      }
     }
   }
 
-  .logo{
+  #menu-toggle.open {
+    #hamburger {
+      span {
+        width: 0%;
+        &:nth-child(1) {
+          transition-delay: 0s;
+        }
+        &:nth-child(2) {
+          transition-delay: 0.125s;
+        }
+        &:nth-child(3) {
+          transition-delay: 0.25s;
+        }
+      }
+    }
+    #cross {
+      span {
+        &:nth-child(1) {
+          height: 85%;
+          transition-delay: 0.625s;
+        }
+      }
+      span {
+        &:nth-child(2) {
+          width: 76%;
+          transition-delay: 0.375s;
+        }
+      }
+    }
+  }
+
+  .socials {
+    i {
+      margin-left: 8px;
+      font-size: 1.2rem;
+      color: lighten($black, 70%);
+    }
+  }
+
+  .logo {
     font-family: 'Shadows Into Light', cursive;
-    color: lighten($black,90%);
+    color: lighten($black, 90%);
     font-size: 1.8rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
   }
 
-  .nav{
+  .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 40px;
 
-    nav{
+    nav {
+      display: flex;
 
-      .menu{
+      @include atMobile {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: -100%;
+        opacity: 0;
+        justify-content: center;
+        background: $black;
+        z-index: 999;
+        border-top: 1px solid lighten($black, 20%);
+
+        &.open {
+          left: 0;
+          opacity: 1;
+        }
+
+        .menu-main-menu-container {
+          display: flex;
+          justify-content: center;
+
+          .menu {
+            justify-content: center;
+            flex-direction: column;
+
+            &-item {
+              margin: 15px 0;
+            }
+          }
+        }
+      }
+
+      .menu {
         display: flex;
         align-items: center;
         list-style: none;
         margin-bottom: 0;
         padding-left: 0;
 
-        .current-menu-item a{
+        .current-menu-item a {
           color: $white;
         }
 
-        &-item{
+        &-item {
           margin-right: 15px;
 
-          a{
-            color: lighten($black,60%);
+          a {
+            color: lighten($black, 60%);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 300;
           }
-          
         }
       }
     }

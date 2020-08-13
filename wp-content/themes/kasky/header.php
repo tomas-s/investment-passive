@@ -11,6 +11,17 @@
   <header class="header">
     <div class="container">
       <div class="nav">
+      <div id="menu-toggle">
+        <div id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="cross">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
         <nav>
           <?php wp_nav_menu(array(
             'theme_location' => 'mainMenu'

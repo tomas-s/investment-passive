@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
-@define-mixin atSmall {
+@mixin atSmall {
   @media (min-width: 530px) {
-    @mixin-content;
+    @content;
   }
 }
 
-@define-mixin atSmallMedium {
+@mixin atMobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin atSmallMedium {
   @media (min-width: 767px) {
-    @mixin-content;
+    @content;
   }
 }
 
-@define-mixin atMedium {
+@mixin atMedium {
   @media (min-width: 960px) {
-    @mixin-content;
+    @content;
   }
 }
 
@@ -32,17 +38,19 @@ img {
 }
 
 a {
-  
 }
 
 a:hover {
   text-decoration: none;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin: 0 0 1.65em 0;
 }
 
-p, li {
+p,
+li {
   line-height: 1.65;
 }
