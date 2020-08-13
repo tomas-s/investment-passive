@@ -689,3 +689,7 @@ li {
       display: flex;
       transform: scale(1);
       z-index: 10; }
+.common-page {
+  padding-top: 100px; }
+.common-page h1 {
+    font-weight: 500; }
