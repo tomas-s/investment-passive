@@ -30,6 +30,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background: $black;
+  font-weight: 300;
 }
 
 img {
@@ -38,6 +39,8 @@ img {
 }
 
 a {
+  color: #d1009d;
+  text-decoration: none;
 }
 
 a:hover {
