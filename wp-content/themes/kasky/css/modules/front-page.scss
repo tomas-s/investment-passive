@@ -1,4 +1,4 @@
-.pha{
+.pha {
   padding: 40px 0;
   text-align: center;
 }
@@ -14,9 +14,10 @@
     text-decoration: none;
 
     &:hover .portfolio-headlines {
-      background: lighten($black,  90%);
+      background: lighten($black, 90%);
 
-      h3,h4{
+      h3,
+      h4 {
         color: $black;
       }
     }
@@ -32,11 +33,20 @@
       flex-direction: column;
       padding: 30px;
       text-align: center;
-    
-      h3,h4{
+
+      @include atMobile {
+        flex-basis: 30%;
+        padding: 15px;
+      }
+
+      h3,
+      h4 {
         color: $white;
-        font-weight:400;
-        
+        font-weight: 400;
+
+        @include atMobile {
+          font-weight: 300;
+        }
       }
     }
 
@@ -46,6 +56,11 @@
       background-size: cover !important;
       background-repeat: no-repeat !important;
       background-position: center !important;
+
+      @include atMobile {
+        flex-basis: 70%;
+        height: 260px;
+      }
 
       img {
         width: 100%;
