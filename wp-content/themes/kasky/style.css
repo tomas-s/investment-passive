@@ -579,13 +579,13 @@ li {
           .header .nav nav.open {
             left: 0;
             opacity: 1; }
-          .header .nav nav .menu-main-menu-container {
+          .header .nav nav > div {
             display: flex;
             justify-content: center; }
-            .header .nav nav .menu-main-menu-container .menu {
+            .header .nav nav > div .menu {
               justify-content: center;
               flex-direction: column; }
-              .header .nav nav .menu-main-menu-container .menu-item {
+              .header .nav nav > div .menu-item {
                 margin: 15px 0; } }
 .header .nav nav .menu {
         display: flex;
