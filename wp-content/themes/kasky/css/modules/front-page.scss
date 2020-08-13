@@ -1,10 +1,25 @@
+.pha{
+  padding: 40px 0;
+  text-align: center;
+}
+
 .brno {
   padding-top: 20px;
 
   .portfolio-post {
     display: flex;
-    margin-top: 30px;
+    margin-top: 40px;
     cursor: pointer;
+    transition: all 300ms;
+    text-decoration: none;
+
+    &:hover .portfolio-headlines {
+      background: lighten($black,  90%);
+
+      h3,h4{
+        color: $black;
+      }
+    }
 
     &:nth-child(odd) {
       flex-direction: row-reverse;
@@ -16,13 +31,25 @@
       justify-content: center;
       flex-direction: column;
       padding: 30px;
+      text-align: center;
+    
+      h3,h4{
+        color: $white;
+        font-weight:400;
+        
+      }
     }
 
     .img {
       flex-basis: 60%;
+      height: 350px;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
 
       img {
         width: 100%;
+        height: 100%;
       }
     }
   }
